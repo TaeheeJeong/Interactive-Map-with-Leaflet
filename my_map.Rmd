@@ -1,0 +1,35 @@
+---
+title: "Map with Leaflet"
+author: "Taehee"
+date: "October 19, 2016"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## October 19, 2016
+
+
+```{r map, echo = FALSE}
+library(leaflet)
+#my_map <- leaflet() %>% 
+#          addTiles() %>%
+#          addMarkers(lat=37.326420, lng=-122.067250,
+#                     popup="Taehee's home") 
+#my_map
+my_list <- data.frame(
+          Latitude=c(37.326420,37.322594,37.332454,37.340605), 
+          Longitude=c(-122.067250,-122.030892,-122.086900,-121.973687)
+
+)
+
+my_list %>%
+        leaflet() %>%
+        addTiles() %>%
+        addMarkers(popup=c("Taehee's home","favorite cafe & bakery","favorite hiking place",
+                           "favorite library"))
+my_list
+```
+
